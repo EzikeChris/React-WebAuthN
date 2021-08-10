@@ -1,51 +1,32 @@
+import { BrowserRouter, Route } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import Login from './auth/login'
+import Register from './auth/register'
 import Home from './components/Home/home.compoents';
+import Nav from './components/Nav/nav.components';
+
 
 function App() {
   return (
-    <div className="App">
-     <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex">
-       <div className="container d-flex">
-
-         <a href="w" className="navbar-brand">Home</a>
-
-         <div className="collapse navbar-collapse">
-           <ul className="navbar-nav ml-auto">
-             <li className="nav-item">
-               <a href="w" className="nav-link">
-                 Login
-               </a>
-             </li>
-
-             <li className="nav-item">
-               <a href="w" className="nav-link">
-                Sign-Up
-               </a>
-             </li>
-
-           </ul>
-
-         </div>
 
 
-
-
-
-
-
-
-
-
-       </div>
-     </nav>
+    <BrowserRouter>
+     <div className="App">
+      <Nav/>
      <div className="auth-wrapper">
        <div className="auth-inner">
-         <Home/>
 
+         <switch>
+           <Route exact  path="/" component={Home}/>
+           <Route exact path="/login" component={Login}/>
+           <Route exact path="/register" component={Register}/>
+         </switch>
        </div>
      </div>
     </div>
+</BrowserRouter>
+   
   );
 }
 

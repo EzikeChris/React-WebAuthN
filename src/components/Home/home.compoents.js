@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 export default class Home extends Component {
     render() {
         return (
-            <h2>You are not logged-In</h2>
+            <h1>  Google Codelab </h1>
         )
 }
 
